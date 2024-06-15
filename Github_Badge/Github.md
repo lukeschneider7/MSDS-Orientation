@@ -14,7 +14,11 @@ https://github.com/alonzi
 - Why is the covid prediction model validated on such a smaller timeframe than it is tested on?
 https://github.com/UVA-MLSys/gpce-covid 
 
-# Dr. Afriyie Github
+# Dr.Stephen Baek Github
+- In his /Trade Repo what do the python financial libraries tqdm, talib and glob work to do?
+- What all does .gitignore entail?
+- In his shape matters for income research, what are the effect of using P1 and P2 as parameters instead of height and bmi?
+https://github.com/stephenbaek 
 
 11.
 
