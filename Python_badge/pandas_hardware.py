@@ -3,10 +3,15 @@
 # the features you couldn't address with a histogram provide a qualitative description.
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plot
 
 # Read the Hardware Data
 file_path = 'Python_badge/hardware.xlsx'
-hardware_data = pd.read_excel(file_path, engine='openpyxl')
+data = pd.read_excel(file_path, engine='openpyxl')
+
+# Remove outlier at top of data
+clean_data = data.iloc[1:]
+hardware_data = clean_data[(clean_data['Hard Drive Size (in GB)']<1000) & (clean_data['CPU Cycle Rate (in GHz)'] < 4) & (clean_data['RAM (in GB)'] < 33)]
 
 #print head of data
 pd.set_option('display.max_columns', None)
@@ -19,3 +24,33 @@ hardware_data['CPU_rate_quantile_bin'] = pd.qcut(hardware_data['CPU Cycle Rate (
 # Display the quantile binned DataFrame
 print(hardware_data)
 
+# Operating Systems not shown as histograph as they were all either mac or windows
+# Github User name and uva id were features included for assignment purposes
+# GPU Descriptions did not have many repeats so histogram did not seem like it would be interesting
+
+# Plot different numerical features as histographs
+plot.subplot(4, 3, 1)
+plot.hist(hardware_data['Hard Drive Size (in GB)'], bins=40, color = "g")
+plot.title('Hard Drive Size in GB with outliers')
+plot.xlabel('GB')
+plot.ylabel('count')
+
+plot.subplot(4, 3, 3)
+plot.hist(hardware_data['CPU Cycle Rate (in GHz)'], bins=40, color = "r")
+plot.title('CPU Cycle Rate (in GHz)')
+plot.xlabel('GHz')
+plot.ylabel('count')
+
+plot.subplot(4, 3, 7)
+plot.hist(hardware_data['CPU Number of Cores (int)'], bins=40, color = "b")
+plot.title('CPU Number of Cores (int)')
+plot.xlabel('# Cores')
+plot.ylabel('count')
+
+plot.subplot(4, 3, 9)
+plot.hist(hardware_data['RAM (in GB)'], bins=40, color = "y")
+plot.title('RAM (in GB)')
+plot.xlabel('RAM GB')
+plot.ylabel('count')
+plot.savefig('hardware_plots.png')
+plot.show()
