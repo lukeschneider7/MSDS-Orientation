@@ -22,4 +22,7 @@ plot.hist(binomial_dist, bins=30, color = "g")
 plot.title(f'Normal Distribution (mean={avg}, std={std_dev})')
 plot.xlabel("value")
 plot.ylabel("probability")
+plot.savefig('Converging_histograms.png')
 plot.show()
+
+
