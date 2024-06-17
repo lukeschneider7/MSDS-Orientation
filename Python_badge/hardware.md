@@ -3,8 +3,8 @@
 
 Fig 1: Plots of Numerical features of UVA MSDS class of 2024-2025 Computer hardware
 
-Operating Systems not shown as histograph as they were all either mac or windows
+- Operating Systems not shown as histograph as they were all either mac or windows
 
-Github User name and uva id were features included for assignment purposes
+- Github User name and uva id were features included for assignment purposes
 
-GPU Descriptions did not have many repeats so histogram did not seem like it would be interesting
+- GPU Descriptions did not have many repeats so histogram did not seem like it would be interesting
